@@ -10,7 +10,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
-    public static String HOST = "192.168.231.202";
+    public static String HOST = "localhost";
     public final String BASE_URL = "http://" + HOST + ":8080";
     OkHttpClient okHttpClient = new OkHttpClient().newBuilder()
             .connectTimeout(40, TimeUnit.SECONDS)

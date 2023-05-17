@@ -96,7 +96,7 @@ public class ProfileActivity extends AppCompatActivity {
         tlMyProfileItem = findViewById(R.id.tlMyProfileItem);
         vp2MyProfileItem = findViewById(R.id.vp2MyProfileItem);
 
-        appBarOrderBtn = findViewById(R.id.appBarProfileBtn);
+        appBarOrderBtn = findViewById(R.id.clOrderAppBar);
 
         mProgressDialog = new ProgressDialog(ProfileActivity.this);
         mProgressDialog.setMessage("Please wait upload ...");

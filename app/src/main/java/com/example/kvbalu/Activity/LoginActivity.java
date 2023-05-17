@@ -32,6 +32,9 @@ public class LoginActivity extends AppCompatActivity {
     Button loginBtn;
 //    UserAPI userAPI;
 
+    EditText et_host;
+    Button btn_changeHost;
+
     UserModel userModel;
 
     @Override
@@ -41,15 +44,15 @@ public class LoginActivity extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);//int flag, int mask
 
-        if (SharedPrefManager.getInstance(this).isLoggedIn()){
+        if (SharedPrefManager.getInstance(this).isLoggedIn()) {
             finish();
-            Toast.makeText(this, "Xin chào - " + SharedPrefManager.getInstance(this).getUser().getName(),Toast.LENGTH_LONG ).show();
+            Toast.makeText(this, "Xin chào - " + SharedPrefManager.getInstance(this).getUser().getName(), Toast.LENGTH_LONG).show();
             startActivity(new Intent(LoginActivity.this, MainActivity.class));
         }
 
         setContentView(R.layout.activity_login);
         changeHOST();
-
+        et_host.setText(RetrofitClient.HOST);
         username = findViewById(R.id.et_username);
         password = findViewById(R.id.et_password);
         loginBtn = findViewById(R.id.btn_login);
@@ -62,17 +65,19 @@ public class LoginActivity extends AppCompatActivity {
         });
         loginBtn.setOnClickListener(v -> login());
         tvForgetPass.setOnClickListener(v -> startActivity(new Intent(LoginActivity.this, ResetPasswordActivity.class)));
+
+//
     }
 
     public void login() {
         String u = String.valueOf(username.getText());
         String p = String.valueOf(password.getText());
-        if(TextUtils.isEmpty(u)){
+        if (TextUtils.isEmpty(u)) {
             username.setError("Please enter your username");
             username.requestFocus();
             return;
         }
-        if(TextUtils.isEmpty(p)){
+        if (TextUtils.isEmpty(p)) {
             password.setError("Please enter your password");
             password.requestFocus();
             return;
@@ -82,7 +87,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(@NonNull Call<UserModel> call, @NonNull Response<UserModel> response) {
                 if (response.isSuccessful()) {
                     userModel = response.body();
-                    if(userModel != null){
+                    if (userModel != null) {
                         Toast.makeText(LoginActivity.this, userModel.getEmail(), Toast.LENGTH_SHORT).show();
                         SharedPrefManager.getInstance(getApplicationContext()).userLogin(userModel);
                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
@@ -103,11 +108,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void changeHOST() {
-        EditText et_host = findViewById(R.id.et_host);
-        Button btn_changeHost = findViewById(R.id.btn_changeHost);
-
-        et_host.setText(RetrofitClient.HOST);
-
+        et_host = findViewById(R.id.et_host);
+        btn_changeHost = findViewById(R.id.btn_changeHost);
         btn_changeHost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

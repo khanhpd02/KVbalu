@@ -9,5 +9,9 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="dark_green">#017503</color>
-    <color name="bg">#466682</color>
+    <color name="light_green">#D9FFAD</color>
+
+
+    <!--Background color-->
+    <color name="bg_profile">#f7f6f0</color>
 </resources>

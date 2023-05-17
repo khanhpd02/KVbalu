@@ -32,8 +32,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class CartActivity extends AppCompatActivity implements CartRecycleInterface {
-    ConstraintLayout clHome, clCheckout, clCartPriceCheckout, clOrder, clProfile;
-    AppCompatButton appBarCartBtn;
+    ConstraintLayout clHome, clCheckout, clCartPriceCheckout, clOrder, clProfile, clCart;
     RecyclerView rvCart;
     TextView tvTotalCartPrice;
     TextView tvTotalCartItem;
@@ -85,7 +84,7 @@ public class CartActivity extends AppCompatActivity implements CartRecycleInterf
 
         tvTotalCartPrice = findViewById(R.id.tvTotalCartPrice);
         tvTotalCartItem = findViewById(R.id.tvTotalCartItem);
-        appBarCartBtn = findViewById(R.id.appBarCartBtn);
+        clCart = findViewById(R.id.clCartAppBar);
     }
 
     void loadCart() {
@@ -133,7 +132,7 @@ public class CartActivity extends AppCompatActivity implements CartRecycleInterf
         });
     }
     void refreshCart(){
-        appBarCartBtn.setOnClickListener(v ->{
+        clCart.setOnClickListener(v ->{
             startActivity(new Intent(CartActivity.this, CartActivity.class));
             finish();
         });

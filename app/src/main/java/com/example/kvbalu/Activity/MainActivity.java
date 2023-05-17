@@ -43,11 +43,10 @@ public class MainActivity extends AppCompatActivity implements CategoryRecycleIn
     ImageView userAvatar;
     EditText searchProductEdit;
 
-    ConstraintLayout clCart, clOrder, clProfile;
+    ConstraintLayout clCart, clOrder, clProfile, appBarHomeBtn;
 
     CategoryAdapter categoryAdapter;
     ProductAdapter productAdapter;
-    AppCompatButton appBarHomeBtn;
     List<CategoryModel> categoryList;
 
 
@@ -94,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements CategoryRecycleIn
         rvPopularProduct = findViewById(R.id.rvPopularProduct);
         rvLatestProduct = findViewById(R.id.rvLatestProduct);
 
-        appBarHomeBtn = findViewById(R.id.appBarHomeBtn);
+        appBarHomeBtn = findViewById(R.id.clHomeAppBar);
         clCart = findViewById(R.id.clCartAppBar);
         clOrder = findViewById(R.id.clOrderAppBar);
         clProfile = findViewById(R.id.clProfileAppBar);

@@ -115,7 +115,7 @@ public class OrdersActivity extends AppCompatActivity {
 
         tvTotalOrders = findViewById(R.id.tvTotalOrders);
 
-        clHome = findViewById(R.id.clMainAppBar);
+        clHome = findViewById(R.id.clHomeAppBar);
         clCart = findViewById(R.id.clCartAppBar);
         clProfile = findViewById(R.id.clProfileAppBar);
         clEmptyOrder = findViewById(R.id.clEmpyOrder);
@@ -123,7 +123,7 @@ public class OrdersActivity extends AppCompatActivity {
 
         rvOrderList = findViewById(R.id.rvOrderList);
 
-        appBarOrderBtn = findViewById(R.id.appBarOrderBtn);
+        appBarOrderBtn = findViewById(R.id.clOrderAppBar);
     }
     void toHome(){
         clHome.setOnClickListener(v -> {

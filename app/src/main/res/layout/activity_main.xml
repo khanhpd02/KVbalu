@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D9FFAD"
+    android:background="@color/light_green"
     tools:context=".Activity.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -153,8 +153,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp">
+                android:layout_height="wrap_content">
 
                 <TextView
                     android:id="@+id/textView5"
@@ -171,11 +170,12 @@
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvLatestProduct"
-                    android:layout_width="400dp"
-                    android:layout_height="91dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView5" />
@@ -190,7 +190,6 @@
         android:id="@+id/coordinatorLayout"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="#f7f6f0"
         android:isScrollContainer="false"
         android:nestedScrollingEnabled="true"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -200,33 +199,49 @@
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bottomAppBar"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="match_parent"
             android:layout_gravity="bottom"
             android:isScrollContainer="false"
             android:nestedScrollingEnabled="false"
-            app:backgroundTint="#f7f6f0"
+            app:backgroundTint="@color/light_green"
             app:layout_anchor="@+id/bottomAppBar"
             app:layout_anchorGravity="center"
             app:layout_constraintBottom_toBottomOf="@+id/coordinatorLayout">
 
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
                 android:layout_weight="3"
                 android:background="@drawable/unselect_bar_background"
                 android:gravity="center"
-                android:orientation="horizontal"
-                android:paddingStart="3dp"
-                android:paddingTop="3dp"
-                android:paddingEnd="3dp"
-                android:paddingRight="3dp"
-                android:paddingBottom="3dp">
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clHomeAppBar"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/selected_bar_item"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/ivHome"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/icons8_white_home_" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/clCartAppBar"
-                    android:layout_width="85dp"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:background="@drawable/unselect_bar_item">
+                    android:layout_weight="1">
 
                     <ImageView
                         android:id="@+id/imageView10"
@@ -241,9 +256,9 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/clOrderAppBar"
-                    android:layout_width="85dp"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:background="@drawable/unselect_bar_item">
+                    android:layout_weight="1">
 
                     <ImageView
                         android:id="@+id/imageView11"
@@ -258,9 +273,9 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/clProfileAppBar"
-                    android:layout_width="85dp"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:background="@drawable/unselect_bar_item">
+                    android:layout_weight="1">
 
                     <ImageView
                         android:id="@+id/imageView12"
@@ -277,6 +292,8 @@
 
 
         </com.google.android.material.bottomappbar.BottomAppBar>
+
+
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
