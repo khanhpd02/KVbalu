@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f7f6f0"
+    android:background="#D9FFAD"
     tools:context=".Activity.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -46,7 +46,7 @@
             android:drawableStart="@drawable/icons8_search"
             android:elevation="3dp"
             android:ems="10"
-            android:hint="Search.........."
+            android:hint="Nhập từ khóa"
             android:inputType="textPersonName"
             android:paddingStart="8sp"
             android:paddingEnd="16sp"
@@ -75,7 +75,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="4dp"
             android:fontFamily="sans-serif-condensed"
-            android:text="Categories"
+            android:text="Danh mục"
             android:textColor="#3C3C3C"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -130,7 +130,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:fontFamily="sans-serif-condensed"
-                    android:text="Most Popular Products"
+                    android:text="Sản phẩm phổ biến"
                     android:textColor="#3C3C3C"
                     android:textSize="24sp"
                     android:textStyle="bold"
@@ -162,7 +162,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:fontFamily="sans-serif-condensed"
-                    android:text="Our Latest Products"
+                    android:text="Sản phẩm mới"
                     android:textColor="#3C3C3C"
                     android:textSize="24sp"
                     android:textStyle="bold"
@@ -171,8 +171,8 @@
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvLatestProduct"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="400dp"
+                    android:layout_height="91dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
@@ -189,7 +189,7 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/coordinatorLayout"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         android:background="#f7f6f0"
         android:isScrollContainer="false"
         android:nestedScrollingEnabled="true"
@@ -200,47 +200,19 @@
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bottomAppBar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="60dp"
             android:layout_gravity="bottom"
             android:isScrollContainer="false"
             android:nestedScrollingEnabled="false"
             app:backgroundTint="#f7f6f0"
-            app:layout_anchor="@+id/linearLayout4"
-            app:layout_anchorGravity="top|center" />
-
-        <LinearLayout
-            android:id="@+id/linearLayout4"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="26dp"
-            android:layout_marginEnd="26dp"
-            android:gravity="center"
-            android:isScrollContainer="false"
-            android:nestedScrollingEnabled="false"
-            android:orientation="horizontal">
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/appBarHomeBtn"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:layout_weight="2"
-                android:background="@drawable/selected_bar_item"
-                android:drawableStart="@drawable/icons8_white_home_"
-                android:elevation="3dp"
-                android:fontFamily="@font/raleway"
-                android:paddingStart="24dp"
-                android:paddingTop="3dp"
-                android:paddingEnd="18dp"
-                android:paddingBottom="3dp"
-                android:text="Home"
-                android:textAllCaps="false"
-                android:textColor="#fff"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+            app:layout_anchor="@+id/bottomAppBar"
+            app:layout_anchorGravity="center"
+            app:layout_constraintBottom_toBottomOf="@+id/coordinatorLayout">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:layout_weight="3"
                 android:background="@drawable/unselect_bar_background"
                 android:gravity="center"
                 android:orientation="horizontal"
@@ -252,7 +224,7 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/clCartAppBar"
-                    android:layout_width="60dp"
+                    android:layout_width="85dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/unselect_bar_item">
 
@@ -269,7 +241,7 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/clOrderAppBar"
-                    android:layout_width="60dp"
+                    android:layout_width="85dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/unselect_bar_item">
 
@@ -286,7 +258,7 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/clProfileAppBar"
-                    android:layout_width="60dp"
+                    android:layout_width="85dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/unselect_bar_item">
 
@@ -300,10 +272,12 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@drawable/icons8_user_bar_item" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
+
             </LinearLayout>
 
-        </LinearLayout>
 
+        </com.google.android.material.bottomappbar.BottomAppBar>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
