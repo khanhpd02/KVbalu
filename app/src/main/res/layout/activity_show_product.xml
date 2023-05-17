@@ -20,28 +20,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/ivUserAvatar"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="4dp"
-            android:src="@drawable/user_avatar"
-            app:civ_border_color="#FF000000"
-            app:civ_border_width="1dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5" />
-
         <EditText
             android:id="@+id/searchProductEdit"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginBottom="4dp"
             android:background="@drawable/edittext_white_blackborder"
             android:drawableStart="@drawable/icons8_search"
             android:elevation="3dp"
@@ -52,11 +34,9 @@
             android:paddingEnd="16sp"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/ivUserAvatar"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/ivUserAvatar"
-            app:layout_constraintTop_toTopOf="@+id/ivUserAvatar"
-            app:layout_constraintVertical_bias="0.5" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -75,7 +55,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="4dp"
             android:fontFamily="sans-serif-condensed"
-            android:text="Categories"
+            android:text="Danh mục"
             android:textColor="#3c3c3c"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -109,7 +89,7 @@
             android:layout_marginEnd="8dp"
             android:focusable="false"
             android:fontFamily="sans-serif-condensed"
-            android:text="Show All"
+            android:text="Tất cá"
             android:textColor="#f29e7d"
             android:textSize="20sp"
             android:textStyle="bold"

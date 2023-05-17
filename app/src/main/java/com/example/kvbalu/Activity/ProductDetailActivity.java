@@ -39,7 +39,7 @@ public class ProductDetailActivity extends AppCompatActivity {
     ViewPager vpProductImage;
     CircleIndicator ciProductImage;
     ProductImageAdapter productImageAdapter;
-    TextView tvProductSold, tvProductQuantity, tvProductName, tvProductPrice, tvProductCartNumber;
+    TextView  tvMoTaSanPham,tvProductName, tvProductPrice, tvProductCartNumber; //tvProductSold, tvProductQuantity
     ConstraintLayout clBackBtn, clDecrease, clIncrease;
     AppCompatButton addToCartBtn;
     int productNumCart = 1;
@@ -79,9 +79,9 @@ public class ProductDetailActivity extends AppCompatActivity {
 
         tvProductName = findViewById(R.id.tvProductNameDetail);
         tvProductPrice = findViewById(R.id.tvProductPriceDetail);
-        tvProductSold = findViewById(R.id.tvProductSold);
-        tvProductQuantity = findViewById(R.id.tvProductQuantity);
-
+        /*tvProductSold = findViewById(R.id.tvProductSold);
+        tvProductQuantity = findViewById(R.id.tvProductQuantity);*/
+        tvMoTaSanPham= findViewById(R.id.textView9);
         tvProductCartNumber = findViewById(R.id.tvProductNumberAppBar);
         clDecrease = findViewById(R.id.clDecreaseProductAppBar);
         clIncrease = findViewById(R.id.clIncreaseProductAppBar);
@@ -100,9 +100,9 @@ public class ProductDetailActivity extends AppCompatActivity {
                     if (product != null) {
                         tvProductName.setText(product.getProductName());
                         tvProductPrice.setText(String.valueOf(product.getPrice()));
-                        tvProductSold.setText(String.valueOf(product.getSold()));
-                        tvProductQuantity.setText(String.valueOf(product.getQuantity()));
-
+                        tvMoTaSanPham.setText(product.getDescription());
+                       /* tvProductSold.setText(String.valueOf(product.getSold()));
+                        tvProductQuantity.setText(String.valueOf(product.getQuantity()));*/
                         productImageList = product.getProductImages();
                         loadProductImageSlide(product);
                         productNumCart = Integer.parseInt(String.valueOf(tvProductCartNumber.getText()));
