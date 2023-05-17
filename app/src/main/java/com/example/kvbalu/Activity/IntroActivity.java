@@ -27,10 +27,11 @@ public class IntroActivity extends AppCompatActivity {
             @Override
             public void run() {
                 // Kết thúc Activity hiện tại
-                finish();
+
                 // Tạo Intent để chuyển sang Activity mới
                 Intent intent = new Intent(IntroActivity.this, LoginActivity.class);
                 startActivity(intent);
+                finish();
             }
         }, 2000); // 2000 milliseconds = 2 giây
 

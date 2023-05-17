@@ -15,7 +15,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.kvbalu.API.UserAPI;
-import com.example.kvbalu.API.UserAPI;
 import com.example.kvbalu.Model.UserModel;
 import com.example.kvbalu.R;
 import com.example.kvbalu.SharedPrefManager;
@@ -42,17 +41,17 @@ public class LoginActivity extends AppCompatActivity {
 
         if (SharedPrefManager.getInstance(this).isLoggedIn()){
             finish();
-            Toast.makeText(this, "Welcome - " + SharedPrefManager.getInstance(this).getUser().getName(),Toast.LENGTH_LONG ).show();
+            Toast.makeText(this, "Xin chào - " + SharedPrefManager.getInstance(this).getUser().getName(),Toast.LENGTH_LONG ).show();
             startActivity(new Intent(LoginActivity.this, MainActivity.class));
         }
 
         setContentView(R.layout.activity_login);
 
-        username = findViewById(R.id.usernameEdit);
-        password = findViewById(R.id.passwordEdit);
-        loginBtn = findViewById(R.id.loginBtn);
-        tvForgetPass = findViewById(R.id.tvForgetPass);
-        toSignUpPageBtn = findViewById(R.id.toSignupPageBtn);
+        username = findViewById(R.id.et_username);
+        password = findViewById(R.id.et_password);
+        loginBtn = findViewById(R.id.btn_login);
+        tvForgetPass = findViewById(R.id.btn_forgetPassword);
+        toSignUpPageBtn = findViewById(R.id.btn_signupHere);
 
         toSignUpPageBtn.setOnClickListener(v -> {
             startActivity(new Intent(LoginActivity.this, SignupActivity.class));
@@ -60,8 +59,6 @@ public class LoginActivity extends AppCompatActivity {
         });
         loginBtn.setOnClickListener(v -> login());
         tvForgetPass.setOnClickListener(v -> startActivity(new Intent(LoginActivity.this, ResetPasswordActivity.class)));
-
-
     }
 
     public void login() {
