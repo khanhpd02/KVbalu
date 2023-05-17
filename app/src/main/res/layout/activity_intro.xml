@@ -4,90 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f7f6f0"
+    android:background="@drawable/background_intro"
     tools:context=".Activity.IntroActivity">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="217dp"
-        android:layout_height="143dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/circle_top" />
-
-    <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="404dp"
+        android:layout_height="298dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:srcCompat="@drawable/img_1" />
+        app:srcCompat="@drawable/logobalu3"
+        tools:layout_editor_absoluteY="417dp" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Welcome to\nTL Fashion Store"
+        android:text="ᛕᐯᗷᗩᒪᑌ"
         android:textAlignment="center"
-        android:textColor="#0757f6"
-        android:textSize="30sp"
+        android:textColor="#FBFBFB"
+        android:textSize="50dp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        tools:layout_editor_absoluteX="101dp"
+        tools:layout_editor_absoluteY="233dp" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Discover the latest fashion trends with TLStore.\nShop the new collection of clothing, footwear, accessories, beauty products and more.\nOrder today from us."
+        android:layout_marginTop="48dp"
+        android:text="𓂀𝕋ú𝕚 𝕩á𝕔𝕙 𝕩ị𝕟 𝕤ố 𝟙 𝕍𝕚ệ𝕥 ℕ𝕒𝕞𓂀"
         android:textAlignment="center"
-        android:textColor="#0757f6"
-        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/bottom_background" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/startBtn"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/imageView3">
-
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/big_circle" />
-
-        <ImageView
-            android:id="@+id/imageView7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView6"
-            app:layout_constraintEnd_toEndOf="@+id/imageView6"
-            app:layout_constraintStart_toStartOf="@+id/imageView6"
-            app:layout_constraintTop_toTopOf="@+id/imageView6"
-            app:srcCompat="@drawable/icons8_colored_cart" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

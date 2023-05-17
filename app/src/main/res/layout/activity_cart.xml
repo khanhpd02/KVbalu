@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f7f6f0"
-    android:backgroundTint="#f7f6f0"
+    android:background="@drawable/green_background"
+    android:backgroundTint="#@drawable/green_background"
     tools:context=".Activity.CartActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:fontFamily="sans-serif-medium"
-            android:text="My Cart"
+            android:text="Giỏ hàng"
             android:textColor="#000000"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -83,7 +83,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:fontFamily="sans-serif-medium"
-                android:text=" Items"
+                android:text="Sản phẩm"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="@+id/tvTotalCartItem"
@@ -135,10 +135,23 @@
         android:id="@+id/clProceedToPayment"
         android:layout_width="0dp"
         android:layout_height="160dp"
-        android:background="@drawable/round_top_corner_edece3"
+        android:background="@drawable/green_background"
         app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:text="đ"
+            android:textColor="#f29e7d"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTotalCartPrice"
+            app:layout_constraintStart_toEndOf="@+id/tvTotalCartPrice"
+            app:layout_constraintTop_toTopOf="@+id/tvTotalCartPrice" />
 
         <TextView
             android:id="@+id/textView7"
@@ -147,7 +160,7 @@
             android:layout_marginStart="26dp"
             android:fontFamily="sans-serif-condensed"
             android:gravity="center"
-            android:text="Total Price: "
+            android:text="Tổng: "
             android:textColor="#171616"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -155,18 +168,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.386" />
-
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-condensed"
-            android:text="$"
-            android:textColor="#f29e7d"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/textView7"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
         <TextView
             android:id="@+id/tvTotalCartPrice"
@@ -177,9 +178,9 @@
             android:textColor="#2f6567"
             android:textSize="24sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/textView12"
-            app:layout_constraintStart_toEndOf="@+id/textView12"
-            app:layout_constraintTop_toTopOf="@+id/textView12" />
+            app:layout_constraintBottom_toBottomOf="@+id/textView7"
+            app:layout_constraintStart_toEndOf="@+id/textView7"
+            app:layout_constraintTop_toTopOf="@+id/textView7" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/clCheckout"
@@ -207,57 +208,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
-                    android:text="Buy"
+                    android:text="Đặt Hàng"
                     android:textColor="#FFFFFF"
                     android:textSize="22sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.72"
+                    app:layout_constraintHorizontal_bias="0.512"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.485" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout9"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:background="@drawable/category_background"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:background="@drawable/unselect_bar_background"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:background="@drawable/unselect_bar_item"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <ImageView
-                        android:id="@+id/imageView16"
-                        android:layout_width="50dp"
-                        android:layout_height="40dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/icons8_colored_cart" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -328,7 +287,6 @@
                 android:layout_weight="2"
                 android:background="@drawable/selected_bar_item"
                 android:drawableStart="@drawable/icons8_shopping_cart_bar_item"
-                android:fontFamily="@font/raleway"
                 android:paddingStart="24dp"
                 android:paddingTop="3dp"
                 android:paddingEnd="18dp"
