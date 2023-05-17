@@ -17,7 +17,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -49,10 +48,9 @@ public class ShowProductActivity extends AppCompatActivity implements CategoryRe
     CategoryAdapter categoryAdapter;
     ProductAdapter productAdapter;
     TextView tvUserAction, tvShowAllProduct;
-    ConstraintLayout clCart, clOrder, clProfile;
+    ConstraintLayout clCart, clOrder, clProfile, clHome;
     EditText searchProductEdit;
 
-    AppCompatButton appBarHomeBtn;
     List<CategoryModel> categoryList;
     List<ProductModel> productList;
 
@@ -76,7 +74,7 @@ public class ShowProductActivity extends AppCompatActivity implements CategoryRe
         showAllProduct();
         showProduct();
 
-        backToHome();
+        reloadHome();
         goToCart();
         toProfile();
         toOrder();
@@ -90,7 +88,7 @@ public class ShowProductActivity extends AppCompatActivity implements CategoryRe
         rvCategory = findViewById(R.id.rvCategory);
         rvShowProduct = findViewById(R.id.rvShowProduct);
 
-        appBarHomeBtn = findViewById(R.id.appBarHomeBtn);
+        clHome = findViewById(R.id.clHomeAppBar);
 
         tvUserAction = findViewById(R.id.tvUserAction);
         tvShowAllProduct = findViewById(R.id.tvShowAllProduct);
@@ -154,8 +152,8 @@ public class ShowProductActivity extends AppCompatActivity implements CategoryRe
         }));
     }
 
-    public void backToHome() {
-        appBarHomeBtn.setOnClickListener(v -> {
+    public void reloadHome() {
+        clHome.setOnClickListener(v -> {
             finish();
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
         });
