@@ -103,4 +103,24 @@
         app:layout_constraintEnd_toEndOf="@+id/linearLayout"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
+    <EditText
+        android:id="@+id/et_host"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="32dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="HOST"
+        app:layout_constraintBottom_toTopOf="@+id/btn_signupHere"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_changeHost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đổi"
+        app:layout_constraintBottom_toBottomOf="@+id/et_host"
+        app:layout_constraintStart_toEndOf="@+id/et_host" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

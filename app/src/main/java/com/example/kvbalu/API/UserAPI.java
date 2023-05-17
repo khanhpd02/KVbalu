@@ -24,7 +24,7 @@ public interface UserAPI {
 
     @FormUrlEncoded
     @POST("/user")
-    Call<UserModel> signup(@Field("userName") String username,
+        Call<UserModel> signup(@Field("userName") String username,
                            @Field("email") String email,
                            @Field("phoneNumber") String phoneNumber,
                            @Field("password") String password);

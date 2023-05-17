@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -17,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.kvbalu.API.UserAPI;
 import com.example.kvbalu.Model.UserModel;
 import com.example.kvbalu.R;
+import com.example.kvbalu.Retrofit.RetrofitClient;
 import com.example.kvbalu.SharedPrefManager;
 
 import retrofit2.Call;
@@ -46,6 +48,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         setContentView(R.layout.activity_login);
+        changeHOST();
 
         username = findViewById(R.id.et_username);
         password = findViewById(R.id.et_password);
@@ -97,5 +100,25 @@ public class LoginActivity extends AppCompatActivity {
                 Log.e("======", "call api fail");
             }
         });
+    }
+
+    private void changeHOST() {
+        EditText et_host = findViewById(R.id.et_host);
+        Button btn_changeHost = findViewById(R.id.btn_changeHost);
+
+        et_host.setText(RetrofitClient.HOST);
+
+        btn_changeHost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    RetrofitClient.HOST = et_host.getText().toString();
+                    Toast.makeText(LoginActivity.this, "SUCCESS - Máy chủ: " + et_host.getText().toString(), Toast.LENGTH_SHORT).show();
+                } catch (Exception e) {
+                    Toast.makeText(LoginActivity.this, "FAIL", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
     }
 }
