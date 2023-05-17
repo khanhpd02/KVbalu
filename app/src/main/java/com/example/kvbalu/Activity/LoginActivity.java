@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -32,8 +31,6 @@ public class LoginActivity extends AppCompatActivity {
     Button loginBtn;
 //    UserAPI userAPI;
 
-    EditText et_host;
-    Button btn_changeHost;
 
     UserModel userModel;
 
@@ -46,13 +43,11 @@ public class LoginActivity extends AppCompatActivity {
 
         if (SharedPrefManager.getInstance(this).isLoggedIn()) {
             finish();
-            Toast.makeText(this, "Xin chào - " + SharedPrefManager.getInstance(this).getUser().getName(), Toast.LENGTH_LONG).show();
             startActivity(new Intent(LoginActivity.this, MainActivity.class));
         }
+        Toast.makeText(this, RetrofitClient.HOST, Toast.LENGTH_LONG).show();
 
         setContentView(R.layout.activity_login);
-        changeHOST();
-        et_host.setText(RetrofitClient.HOST);
         username = findViewById(R.id.et_username);
         password = findViewById(R.id.et_password);
         loginBtn = findViewById(R.id.btn_login);
@@ -107,20 +102,5 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    private void changeHOST() {
-        et_host = findViewById(R.id.et_host);
-        btn_changeHost = findViewById(R.id.btn_changeHost);
-        btn_changeHost.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    RetrofitClient.HOST = et_host.getText().toString();
-                    Toast.makeText(LoginActivity.this, "SUCCESS - Máy chủ: " + et_host.getText().toString(), Toast.LENGTH_SHORT).show();
-                } catch (Exception e) {
-                    Toast.makeText(LoginActivity.this, "FAIL", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
 
-    }
 }

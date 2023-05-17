@@ -51,8 +51,7 @@ import retrofit2.Response;
 public class ProfileActivity extends AppCompatActivity {
     TextView tvName;
     ImageView ivUserAvatar, ivChangeAvatar;
-
-    ConstraintLayout clHome, clCart, clOrder;
+    ConstraintLayout clHome, clCart, clOrder, clProfile;
     AppCompatButton appBarOrderBtn;
     ProgressDialog mProgressDialog;
     TabLayout tlMyProfileItem;
@@ -92,11 +91,10 @@ public class ProfileActivity extends AppCompatActivity {
         clHome = findViewById(R.id.clHomeAppBar);
         clCart = findViewById(R.id.clCartAppBar);
         clOrder = findViewById(R.id.clOrderAppBar);
+        clProfile = findViewById(R.id.clProfileAppBar);
 
         tlMyProfileItem = findViewById(R.id.tlMyProfileItem);
         vp2MyProfileItem = findViewById(R.id.vp2MyProfileItem);
-
-        appBarOrderBtn = findViewById(R.id.clOrderAppBar);
 
         mProgressDialog = new ProgressDialog(ProfileActivity.this);
         mProgressDialog.setMessage("Please wait upload ...");

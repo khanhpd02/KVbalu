@@ -10,11 +10,11 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
-    public static String HOST = "localhost";
+    public static String HOST = "192.168.69.192";
     public final String BASE_URL = "http://" + HOST + ":8080";
     OkHttpClient okHttpClient = new OkHttpClient().newBuilder()
-            .connectTimeout(40, TimeUnit.SECONDS)
-            .readTimeout(60, TimeUnit.SECONDS)
+            .connectTimeout(20, TimeUnit.SECONDS)
+            .readTimeout(15, TimeUnit.SECONDS)
             .writeTimeout(60, TimeUnit.SECONDS)
             .build();
     Gson gson = new GsonBuilder()

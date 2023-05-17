@@ -11,7 +11,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -33,8 +32,7 @@ import retrofit2.Response;
 
 public class OrdersActivity extends AppCompatActivity {
 
-    ConstraintLayout clHome, clCart, clProfile, clEmptyOrder, clOrderList;
-    AppCompatButton appBarOrderBtn;
+    ConstraintLayout clHome, clCart, clProfile, clOrderAppBar, clEmptyOrder, clOrderList;
     OrderAdapter orderAdapter;
     RecyclerView rvOrderList;
     ImageView userAvatar;
@@ -104,7 +102,7 @@ public class OrdersActivity extends AppCompatActivity {
     }
 
     private void reloadOrders() {
-        appBarOrderBtn.setOnClickListener(v -> {
+        clOrderAppBar.setOnClickListener(v -> {
             finish();
             startActivity(new Intent(OrdersActivity.this, OrdersActivity.class));
         });
@@ -123,7 +121,7 @@ public class OrdersActivity extends AppCompatActivity {
 
         rvOrderList = findViewById(R.id.rvOrderList);
 
-        appBarOrderBtn = findViewById(R.id.clOrderAppBar);
+        clOrderAppBar = findViewById(R.id.clOrderAppBar);
     }
     void toHome(){
         clHome.setOnClickListener(v -> {
