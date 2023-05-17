@@ -2,6 +2,7 @@ package com.example.kvbalu.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -13,7 +14,6 @@ import com.example.kvbalu.SharedPrefManager;
 
 public class IntroActivity extends AppCompatActivity {
 
-    ConstraintLayout start;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,46 +21,22 @@ public class IntroActivity extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);//int flag, int mask
 
-        if (SharedPrefManager.getInstance(this).isLoggedIn()){
-            finish();
-            startActivity(new Intent(IntroActivity.this, LoginActivity.class));
-        }
-
         setContentView(R.layout.activity_intro);
-
-
-        start = findViewById(R.id.startBtn);
-        start.setOnClickListener(v -> {
-            startActivity(new Intent(IntroActivity.this, LoginActivity.class));
-            finish();
-        });
-
-//        loadActivity();
-    }
-    void loadActivity(){
-        new Thread(() -> {
-            int n = 0;
-            try{
-                do {
-                    if (n >= 5000){
-                        toLogin();
-                        return;
-                    }
-                    Thread.sleep((long) 100);
-                    n += 100;
-                }while(true);
-            }catch (InterruptedException interruptedException) {
-                toLogin();
-                return;
-            }catch (Throwable throwable){
-                toLogin();
-                return;
+//         Đặt delay trong 2 giây
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                // Kết thúc Activity hiện tại
+                finish();
+                // Tạo Intent để chuyển sang Activity mới
+                Intent intent = new Intent(IntroActivity.this, LoginActivity.class);
+                startActivity(intent);
             }
-        }).start();
-    }
-    void toLogin(){
-        IntroActivity.this.finish();
-        Intent intent = new Intent(IntroActivity.this.getApplicationContext(), (Class) LoginActivity.class);
-        IntroActivity.this.startActivity(intent);
+        }, 2000); // 2000 milliseconds = 2 giây
+
+//        if (SharedPrefManager.getInstance(this).isLoggedIn()) {
+//            finish();
+//            startActivity(new Intent(IntroActivity.this, LoginActivity.class));
+//        }
     }
 }
