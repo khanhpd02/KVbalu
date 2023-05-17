@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">KVbalu</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="my_profile_detail_fragment">Profile Detail</string>
+    <string name="my_profile_wallet_fragment">Wallet Detail</string>
+    <string name="my_profile_other_fragment">Other Detail</string>
+</resources>
