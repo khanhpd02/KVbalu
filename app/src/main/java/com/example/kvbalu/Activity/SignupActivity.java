@@ -27,7 +27,7 @@ import retrofit2.Response;
 public class SignupActivity extends AppCompatActivity {
     TextView toLoginPageBtn;
     Button signUp;
-    EditText username, name, email, phone, pass, re_pass;
+    EditText username, email, phone, pass, re_pass;
     UserModel userModel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,20 +46,18 @@ public class SignupActivity extends AppCompatActivity {
         signUp.setOnClickListener(v -> signUP());
     }
     public void anhXa(){
-        toLoginPageBtn = findViewById(R.id.toLoginPageBtn);
-        signUp = findViewById(R.id.signupBtn);
+        toLoginPageBtn = findViewById(R.id.btn_loginHere);
+        signUp = findViewById(R.id.btn_signup);
 
-        username = findViewById(R.id.usernameSignUpEdit);
-        name = findViewById(R.id.nameSignUpEdit);
-        email = findViewById(R.id.emailSignUpEdit);
-        phone = findViewById(R.id.phoneSignUpEdit);
-        pass = findViewById(R.id.passwordSignUpEdit);
-        re_pass = findViewById(R.id.repasswordSignUpEdit);
+        username = findViewById(R.id.et_username_signup);
+        email = findViewById(R.id.et_email_signup);
+        phone = findViewById(R.id.et_phonenumber_signup);
+        pass = findViewById(R.id.et_password_signup);
+        re_pass = findViewById(R.id.et_passwordRepeat_signup);
     }
 
     public void signUP(){
         String un = String.valueOf(username.getText());
-        String n = String.valueOf(name.getText());
         String em = String.valueOf(email.getText());
         String ph = String.valueOf(phone.getText());
         String p = String.valueOf(pass.getText());
@@ -68,11 +66,6 @@ public class SignupActivity extends AppCompatActivity {
         if(TextUtils.isEmpty(un)){
             username.setError("Please enter your username");
             username.requestFocus();
-            return;
-        }
-        if(TextUtils.isEmpty(n)){
-            name.setError("Please enter your Name");
-            name.requestFocus();
             return;
         }
         if(TextUtils.isEmpty(em)){
@@ -115,7 +108,7 @@ public class SignupActivity extends AppCompatActivity {
             @Override
             public void onResponse(@NonNull Call<UserModel> call, @NonNull Response<UserModel> response) {
                 if(!response.isSuccessful()){
-                    UserAPI.USER_API.signup(un,n,em,ph,p).enqueue(new Callback<UserModel>() {
+                    UserAPI.USER_API.signup(un,em,ph,p).enqueue(new Callback<UserModel>() {
                         @Override
                         public void onResponse(@NonNull Call<UserModel> call, @NonNull Response<UserModel> response) {
                             if(response.isSuccessful()){
