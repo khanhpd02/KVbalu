@@ -27,44 +27,44 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".Activity.OrderDetailActivity"
+            android:name=".activity.OrderDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.ResetPasswordActivity"
+            android:name=".activity.ResetPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.ProfileActivity"
+            android:name=".activity.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.OrdersActivity"
+            android:name=".activity.OrdersActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.BillActivity"
+            android:name=".activity.BillActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.SelectPaymentActivity"
+            android:name=".activity.SelectPaymentActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.SelectAddressActivity"
+            android:name=".activity.SelectAddressActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.CartActivity"
+            android:name=".activity.CartActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.ShowProductActivity"
+            android:name=".activity.ShowProductActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.ProductDetailActivity"
+            android:name=".activity.ProductDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.LoginActivity"
+            android:name=".activity.LoginActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Activity.IntroActivity"
+            android:name=".activity.IntroActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -77,13 +77,13 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Activity.MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name=".Activity.SignupActivity" />
+        <activity android:name=".activity.SignupActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

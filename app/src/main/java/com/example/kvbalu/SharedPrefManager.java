@@ -4,9 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
-import com.example.kvbalu.Activity.LoginActivity;
-import com.example.kvbalu.Model.UserModel;
-import com.example.kvbalu.Object.DeliveryDetail;
+import com.example.kvbalu.activity.LoginActivity;
+import com.example.kvbalu.model.UserModel;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
