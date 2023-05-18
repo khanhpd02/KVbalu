@@ -184,14 +184,14 @@ public class ProductDetailActivity extends AppCompatActivity {
 
         if (productNum <= 0) {
             addToCartBtn.setBackgroundDrawable(getDrawable(R.drawable.black_circle_gray_inner));
-            addToCartBtn.setCompoundDrawablesWithIntrinsicBounds(R.drawable.icons8_white_shopping_cart, 0, R.drawable.icons8_white_double_right_100, 0);
-            addToCartBtn.setOnClickListener(v -> Toast.makeText(ProductDetailActivity.this, "The number of Product is not Available !", Toast.LENGTH_SHORT).show());
-            clDecrease.setBackground(getDrawable(R.drawable.black_circle_gray_inner));
+            addToCartBtn.setCompoundDrawablesWithIntrinsicBounds(R.drawable.add_cart_btn_icon, 0, R.drawable.icons8_white_double_right_100, 0);
+            addToCartBtn.setOnClickListener(v -> Toast.makeText(ProductDetailActivity.this, "Bằng 0 sao add được!", Toast.LENGTH_SHORT).show());
+            clDecrease.setBackground(getDrawable(R.drawable.subtract_btn));
         } else {
-            addToCartBtn.setBackgroundDrawable(getDrawable(R.drawable.selected_bar_item));
-            addToCartBtn.setCompoundDrawablesWithIntrinsicBounds(R.drawable.icons8_white_shopping_cart, 0, R.drawable.icons8_white_double_right_100, 0);
+            addToCartBtn.setBackgroundDrawable(getDrawable(R.drawable.add_cart_backround));
+            addToCartBtn.setCompoundDrawablesWithIntrinsicBounds(R.drawable.add_cart_btn_icon, 0, R.drawable.icons8_white_double_right_100, 0);
             addToCartBtn.setOnClickListener(v -> addToCart());
-            clDecrease.setBackground(getDrawable(R.drawable.selected_bar_item));
+            clDecrease.setBackground(getDrawable(R.drawable.subtract_btn));
         }
     }
 
@@ -204,10 +204,10 @@ public class ProductDetailActivity extends AppCompatActivity {
                     CartModel cartModel = response.body();
                     if (cartModel != null) {
                         Log.e("Cart ID - ", String.valueOf(cartModel.getId()));
-                        Toast.makeText(ProductDetailActivity.this, "Add " +
-                                cartModel.getQuantity() + " of \"" +
+                        Toast.makeText(ProductDetailActivity.this, "Đã thêm " +
+                                cartModel.getQuantity() + " sản phẩm \"" +
                                 cartModel.getProduct().getProductName() +
-                                "\" successful", Toast.LENGTH_SHORT).show();
+                                "\" vào giỏ hàng", Toast.LENGTH_SHORT).show();
                     }
 
                 }

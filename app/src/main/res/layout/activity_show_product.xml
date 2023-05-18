@@ -152,7 +152,7 @@
                 android:id="@+id/ivNoProduct"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                android:background="@drawable/no_product_found"
+                android:background="@drawable/no_results "
                 android:visibility="invisible" />
         </LinearLayout>
     </ScrollView>

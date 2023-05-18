@@ -102,7 +102,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
 
                                     } else {
                                         mProgressDialog.dismiss();
-                                        tvUsernameErr.setText("Username is not exist!");
+                                        tvUsernameErr.setText("Làm gì có user này!");
                                         tvUsernameErr.setVisibility(View.VISIBLE);
                                     }
                                 }
@@ -118,7 +118,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
                         }
                     } else {
                         mProgressDialog.dismiss();
-                        tvUsernameErr.setText("Username is not exist!");
+                        tvUsernameErr.setText("Làm gì có user này!");
                         tvUsernameErr.setVisibility(View.VISIBLE);
                     }
                 }

@@ -33,6 +33,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:background="@drawable/green_background"
+                android:contentDescription="@string/my_profile_detail_fragment"
                 android:labelFor="@+id/ciProductImage" />
 
             <me.relex.circleindicator.CircleIndicator
@@ -124,27 +125,13 @@
                     android:id="@+id/textView22"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="40dp"
+                    android:layout_marginStart="120dp"
                     android:fontFamily="sans-serif-condensed"
                     android:text="Giá: "
                     android:textColor="#000000"
                     android:textSize="22sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/textView16"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="52dp"
-                    android:fontFamily="sans-serif-condensed"
-                    android:text="Kho"
-                    android:textColor="#000000"
-                    android:textSize="22sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
@@ -216,8 +203,7 @@
         android:id="@+id/coordinatorLayout"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:background="#f7f6f0"
-        android:backgroundTint="#f7f6f0"
+        android:background="#FFFFFF"
         android:isScrollContainer="false"
         android:nestedScrollingEnabled="true"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -231,7 +217,7 @@
             android:layout_gravity="bottom"
             android:isScrollContainer="false"
             android:nestedScrollingEnabled="false"
-            app:backgroundTint="#f7f6f0"
+            app:backgroundTint="#FFFFFF"
             app:layout_anchorGravity="top|center" />
 
         <LinearLayout
@@ -260,24 +246,24 @@
                     android:id="@+id/clDecreaseProductAppBar"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:background="@drawable/selected_bar_item">
+                    android:background="@drawable/subtract_btn">
 
                     <ImageView
-                        android:id="@+id/imageView10"
+                        android:id="@+id/imageView122"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/icons8_subtract" />
+                        app:srcCompat="@drawable/icons8_subtract" /> />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/clProductNumberAppBar"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:background="@drawable/unselect_bar_item">
+                    android:background="#ffffff">
 
                     <TextView
                         android:id="@+id/tvProductNumberAppBar"
@@ -300,7 +286,7 @@
                     android:id="@+id/clIncreaseProductAppBar"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:background="@drawable/selected_bar_item">
+                    android:background="@drawable/add_btn">
 
                     <ImageView
                         android:id="@+id/imageView12"
@@ -324,7 +310,7 @@
                 android:drawableEnd="@drawable/icons8_white_double_right_100"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
-                android:text="Add to Cart"
+                android:text="Thêm"
                 android:textAllCaps="false"
                 android:textColor="#fff"
                 android:textSize="20sp"
