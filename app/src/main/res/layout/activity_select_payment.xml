@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
             android:gravity="center_horizontal"
-            android:text="Checkout (2/3)"
+            android:text="Bước (2/3)"
             android:textColor="#000000"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/clbackBtn"
@@ -87,7 +87,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="4dp"
-            android:text="Delivery address"
+            android:text="Địa chỉ nhận hàng"
             android:textColor="#474343"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -112,7 +112,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
-                android:text="Change"
+                android:text="Thay đổi"
                 android:textColor="#db3022"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -178,6 +178,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout9"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout15"
@@ -215,7 +216,7 @@
                 android:layout_marginEnd="8dp"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center"
-                android:text=" Items"
+                android:text=" Sản phẩm"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="@+id/tvTotalCartItem"
@@ -230,7 +231,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="My Cart"
+            android:text="Tổng cộng:"
             android:textColor="#474343"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -270,25 +271,48 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/checkoutBtn"
-            style="@style/Widget.AppCompat.Button"
-            android:layout_width="190dp"
-            android:layout_height="50dp"
-            android:layout_margin="24dp"
-            android:background="@drawable/count_cart_item"
-            android:paddingStart="24dp"
-            android:paddingEnd="24dp"
-            android:text="Checkout - $10000000"
-            android:textColor="#FFFFFF"
+        <TextView
+            android:id="@+id/tv_totalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="Tổng đơn hàng: 200.000đ"
+            android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <Button
+            android:id="@+id/checkoutBtn"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:background="@drawable/count_cart_item"
+            android:layout_marginTop="10dp"
+            android:text="ĐẶT HÀNG"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="@+id/tv_totalPrice"
+            app:layout_constraintStart_toStartOf="@+id/tv_totalPrice"
+            app:layout_constraintTop_toBottomOf="@+id/tv_totalPrice"/>
+
+        <ProgressBar
+            android:id="@+id/pb_selectPayment"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/tv_totalPrice"
+            app:layout_constraintStart_toStartOf="@+id/tv_totalPrice"
+            app:layout_constraintTop_toBottomOf="@+id/tv_totalPrice" />
+
         <RadioGroup
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -300,14 +324,15 @@
                 android:id="@+id/rdOnlinePayment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Paypal" />
+                android:enabled="false"
+                android:text="Chuyển khoản" />
 
             <RadioButton
                 android:id="@+id/rdCashOnDelivery"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:checked="true"
-                android:text="Cash On Delivery" />
+                android:text="Thanh toán khi nhận hàng" />
         </RadioGroup>
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -93,7 +93,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/clProceedToPayment"
         android:layout_width="0dp"
-        android:layout_height="160dp"
+        android:layout_height="120dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/green_background"
         app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout"
@@ -126,8 +126,7 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.386" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvTotalCartPrice"
@@ -142,39 +141,17 @@
             app:layout_constraintStart_toEndOf="@+id/textView7"
             app:layout_constraintTop_toTopOf="@+id/textView7" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/clCheckout"
+        <ImageView
+            android:id="@+id/iv_checkout_cart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/buy_icon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout10"
-                android:layout_width="131dp"
-                android:layout_height="123dp"
-                android:layout_marginStart="24dp"
-                android:background="#E91E63"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.484" />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/buy_icon"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/constraintLayout10"
-                app:layout_constraintStart_toStartOf="@+id/constraintLayout10"
-                app:layout_constraintTop_toTopOf="parent">
-
-            </ImageView>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </ImageView>
 
         <View
             android:id="@+id/divider2"
@@ -185,6 +162,16 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MUA"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/iv_checkout_cart"
+            app:layout_constraintStart_toStartOf="@+id/iv_checkout_cart"
+            app:layout_constraintTop_toBottomOf="@+id/iv_checkout_cart" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -215,7 +202,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:layout_weight="3"
+                android:weightSum="4"
                 android:background="@drawable/unselect_bar_background"
                 android:gravity="center"
                 android:orientation="horizontal">

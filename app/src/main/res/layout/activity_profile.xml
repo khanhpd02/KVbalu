@@ -27,11 +27,12 @@
 
             <ImageView
                 android:id="@+id/imageView25"
-                android:layout_width="410dp"
-                android:layout_height="235dp"
-                app:srcCompat="@drawable/green_background"
-                tools:layout_editor_absoluteX="2dp"
-                tools:layout_editor_absoluteY="32dp" />
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/green_background" />
 
             <TextView
                 android:id="@+id/textView38"
@@ -189,17 +190,17 @@
                 android:layout_height="match_parent"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:layout_weight="3"
                 android:background="@drawable/unselect_bar_background"
                 android:gravity="center"
+                android:weightSum="1"
                 android:orientation="horizontal">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/clHomeAppBar"
                     android:layout_width="0dp"
-                    android:background="@drawable/green_background"
                     android:layout_height="match_parent"
-                    android:layout_weight="1">
+                    android:layout_weight="0.25"
+                    android:background="@drawable/green_background">
 
                     <ImageView
                         android:id="@+id/ivHome"
@@ -215,9 +216,9 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/clCartAppBar"
                     android:layout_width="0dp"
-                    android:background="@drawable/green_background"
                     android:layout_height="match_parent"
-                    android:layout_weight="1">
+                    android:layout_weight="0.25"
+                    android:background="@drawable/green_background">
 
                     <ImageView
                         android:id="@+id/imageView10"
@@ -233,9 +234,9 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/clOrderAppBar"
                     android:layout_width="0dp"
-                    android:background="@drawable/green_background"
                     android:layout_height="match_parent"
-                    android:layout_weight="1">
+                    android:layout_weight="0.25"
+                    android:background="@drawable/green_background">
 
                     <ImageView
                         android:id="@+id/imageView11"
@@ -252,8 +253,8 @@
                     android:id="@+id/clProfileAppBar"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:background="@drawable/selected_bar_item"
-                    android:layout_weight="1">
+                    android:layout_weight="0.25"
+                    android:background="@drawable/selected_bar_item">
 
                     <ImageView
                         android:id="@+id/imageView12"

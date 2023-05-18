@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,7 +40,7 @@ public class SelectAddressActivity extends AppCompatActivity implements Delivery
 
     ImageView ivNoAddressFound;
 
-    AppCompatButton proceedToPaymentBtn;
+    Button proceedToPaymentBtn;
     int position = -1;
     List<DeliveryDetail> deliveryDetails = new ArrayList<>();
 

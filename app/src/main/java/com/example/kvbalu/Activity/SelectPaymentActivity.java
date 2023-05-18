@@ -4,14 +4,16 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -34,13 +36,12 @@ import retrofit2.Response;
 
 public class SelectPaymentActivity extends AppCompatActivity {
     ConstraintLayout clBackBtn;
-
+    ProgressBar pb;
     DeliveryDetail deliveryDetail = new DeliveryDetail();
     RecyclerView rvCartPayment;
-    TextView tvReceiverName, tvReceiverPhone, tvReceiverAddress, tvChangeDeliveryDetail, tvTotalCartItem;
-    AppCompatButton checkoutBtn;
+    TextView tvReceiverName, tvReceiverPhone, tvReceiverAddress, tvChangeDeliveryDetail, tvTotalCartItem, tv_totalPrice;
+    Button checkoutBtn;
     CartSelectPaymentAdapter cartSelectPaymentAdapter;
-    String paymentBtnTxt = "CHECKOUT - $";
 
     List<CartModel> cartList = new ArrayList<>();
     int totalCartPrice = 0;
@@ -74,7 +75,9 @@ public class SelectPaymentActivity extends AppCompatActivity {
 
         rvCartPayment = findViewById(R.id.rvCartPayment);
 
-        checkoutBtn = (AppCompatButton) findViewById(R.id.checkoutBtn);
+        checkoutBtn = findViewById(R.id.checkoutBtn);
+        tv_totalPrice = findViewById(R.id.tv_totalPrice);
+        pb = findViewById(R.id.pb_selectPayment);
     }
 
     void loadDeliveryDetail() {
@@ -110,7 +113,7 @@ public class SelectPaymentActivity extends AppCompatActivity {
                         for (CartModel c : cartList) {
                             totalCartPrice += c.getQuantity() * c.getProduct().getPrice();
                         }
-                        checkoutBtn.setText(paymentBtnTxt + totalCartPrice);
+                        tv_totalPrice.setText("Tổng đơn hàng: " + totalCartPrice + "đ");
                         tvTotalCartItem.setText(String.valueOf(cartList.size()));
 //                        tvTotalCartPrice.setText(String.valueOf(totalCartPrice));
                     }
@@ -126,27 +129,45 @@ public class SelectPaymentActivity extends AppCompatActivity {
 
     void checkout() {
         checkoutBtn.setOnClickListener(v -> {
+            setProgressing(true);
+
             long id = SharedPrefManager.getInstance(this).getUser().getId();
             OrderAPI.ORDER_API.addCartToOrder(id, a, p).enqueue(new Callback<OrderModel>() {
                 @Override
                 public void onResponse(@NonNull Call<OrderModel> call, @NonNull Response<OrderModel> response) {
                     if (response.isSuccessful()) {
                         OrderModel orderModel = response.body();
-                        if (orderModel != null){
-                            Toast.makeText(SelectPaymentActivity.this, "Your Order Id: " + orderModel.getId(), Toast.LENGTH_SHORT).show();
+                        if (orderModel != null) {
+                            Toast.makeText(SelectPaymentActivity.this, "Đặt hàng thành công! (ID:" + orderModel.getId()+")", Toast.LENGTH_SHORT).show();
+                            setProgressing(false);
                             finish();
                             startActivity(new Intent(SelectPaymentActivity.this, BillActivity.class).putExtra("orderId", orderModel.getId()));
+
                         }
-                    }else{
-                        Toast.makeText(SelectPaymentActivity.this, "Your Order is not accepted !!!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(SelectPaymentActivity.this, "Không thành công !!!", Toast.LENGTH_SHORT).show();
+                        setProgressing(false);
                     }
                 }
 
                 @Override
                 public void onFailure(@NonNull Call<OrderModel> call, @NonNull Throwable t) {
                     Log.e("Call order API", t.getMessage());
+                    Toast.makeText(SelectPaymentActivity.this, "Lỗi kết nối với server!!!", Toast.LENGTH_SHORT).show();
+                    setProgressing(false);
                 }
             });
         });
+    }
+
+    void setProgressing(boolean isTrue) {
+        if (isTrue) {
+            pb.setVisibility(View.VISIBLE);
+            checkoutBtn.setVisibility(View.GONE);
+        } else {
+            pb.setVisibility(View.GONE);
+            checkoutBtn.setVisibility(View.VISIBLE);
+        }
+
     }
 }

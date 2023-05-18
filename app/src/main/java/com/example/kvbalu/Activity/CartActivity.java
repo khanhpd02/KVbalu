@@ -11,12 +11,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.example.kvbalu.API.CartAPI;
 import com.example.kvbalu.Adapter.CartAdapter;
 import com.example.kvbalu.Interface.CartRecycleInterface;
@@ -32,7 +30,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class CartActivity extends AppCompatActivity implements CartRecycleInterface {
-    ConstraintLayout clHome, clCheckout, clCartPriceCheckout, clOrder, clProfile, clCart;
+    ConstraintLayout clHome, clCartPriceCheckout, clOrder, clProfile, clCart;
+    ImageView iv_checkout;
     RecyclerView rvCart;
     TextView tvTotalCartPrice;
     TextView tvTotalCartItem;
@@ -72,7 +71,7 @@ public class CartActivity extends AppCompatActivity implements CartRecycleInterf
 
     void anhXa() {
         clHome = findViewById(R.id.clHomeAppBar);
-        clCheckout = findViewById(R.id.clCheckout);
+        iv_checkout = findViewById(R.id.iv_checkout_cart);
         clCartPriceCheckout = findViewById(R.id.clProceedToPayment);
         clOrder = findViewById(R.id.clOrderAppBar);
         clProfile = findViewById(R.id.clProfileAppBar);
@@ -152,7 +151,7 @@ public class CartActivity extends AppCompatActivity implements CartRecycleInterf
         }
     }
     public void goToCheckout(){
-        clCheckout.setOnClickListener(v -> startActivity(new Intent(CartActivity.this, SelectAddressActivity.class)));
+        iv_checkout.setOnClickListener(v -> startActivity(new Intent(CartActivity.this, SelectAddressActivity.class)));
     }
     void toProfile(){
         clProfile.setOnClickListener(v -> {

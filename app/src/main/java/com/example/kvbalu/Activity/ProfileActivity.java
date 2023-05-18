@@ -24,7 +24,6 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -52,7 +51,6 @@ public class ProfileActivity extends AppCompatActivity {
     TextView tvName;
     ImageView ivUserAvatar, ivChangeAvatar;
     ConstraintLayout clHome, clCart, clOrder, clProfile;
-    AppCompatButton appBarOrderBtn;
     ProgressDialog mProgressDialog;
     TabLayout tlMyProfileItem;
     ViewPager2 vp2MyProfileItem;
@@ -227,8 +225,7 @@ public class ProfileActivity extends AppCompatActivity {
                         Log.e("mUri", mUri.getPath());
                         try {
                             Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
-                            ivUserAvatar.setImageBitmap(bitmap);
-                            uploadImage();
+                            uploadImage(bitmap);
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -237,30 +234,35 @@ public class ProfileActivity extends AppCompatActivity {
             }
     );
 
-    private void uploadImage() {
+    private void uploadImage(Bitmap avatar_bitmap) {
         mProgressDialog.show();
         user = SharedPrefManager.getInstance(this).getUser();
-//        String idString = String.valueOf(user.getId());
 
         String IMAGE_PATH = RealPathUtil.getRealPath(this, mUri);
-        Log.e("=========IMG PATH", IMAGE_PATH);
+        Log.e("--IMAGE_PATH", IMAGE_PATH);
         File file = new File(IMAGE_PATH);
+        if (!file.canRead()) {
+            Toast.makeText(ProfileActivity.this, "cannot read file", Toast.LENGTH_SHORT).show();
+            mProgressDialog.dismiss();
+            return;
+        }
+
         RequestBody requestFile = RequestBody.create(MediaType.parse("multipart/form-data"), file);
         MultipartBody.Part partBodyImages = MultipartBody.Part.createFormData("file", file.getName(), requestFile);
         FileAPI.FILE_API.uploadFile(partBodyImages).enqueue(new Callback<String>() {
             @Override
             public void onResponse(@NonNull Call<String> call, @NonNull Response<String> response) {
-//                user = response.body();
-                if(response.isSuccessful()){
+                if (response.isSuccessful()) {
                     String file = response.body();
-                    if(file != null){
+                    if (file != null) {
                         user.setAvatar(response.body());
                         UserAPI.USER_API.updateUser(user.getId(), user).enqueue(new Callback<UserModel>() {
                             @Override
                             public void onResponse(Call<UserModel> call, Response<UserModel> response) {
-                                if(response.isSuccessful()){
+                                if (response.isSuccessful()) {
+                                    ivUserAvatar.setImageBitmap(avatar_bitmap);
                                     SharedPrefManager.getInstance(ProfileActivity.this).userLogin(user);
-                                    Toast.makeText(ProfileActivity.this, "Update Avatar Successful", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(ProfileActivity.this, "Cập nhật ảnh thành công!", Toast.LENGTH_SHORT).show();
                                     mProgressDialog.dismiss();
                                 }
                             }
@@ -277,7 +279,7 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Call<String> call, @NonNull Throwable t) {
                 Log.e("TAG", t.toString());
-                Toast.makeText(ProfileActivity.this, "Update Avatar Fail", Toast.LENGTH_LONG).show();
+                Toast.makeText(ProfileActivity.this, "Lỗi cập nhật avatar!!!", Toast.LENGTH_LONG).show();
                 mProgressDialog.dismiss();
             }
         });
