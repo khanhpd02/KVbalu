@@ -25,6 +25,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -55,7 +56,7 @@ public class ProfileActivity extends AppCompatActivity {
     ProgressDialog mProgressDialog;
     TabLayout tlMyProfileItem;
     ViewPager2 vp2MyProfileItem;
-    AppCompatButton appCompatEditProfileBtn, appCompatLogoutBtn;
+    AppCompatButton appCompatLogoutBtn;
 
     MyProfileViewPagerAdapter profileViewPagerAdapter;
 
