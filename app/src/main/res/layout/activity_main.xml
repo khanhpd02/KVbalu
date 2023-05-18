@@ -234,12 +234,14 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/icons8_white_home_" />
+                        app:srcCompat="@drawable/home" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/clCartAppBar"
                     android:layout_width="0dp"
+                    android:background="@drawable/green_background"
+
                     android:layout_height="match_parent"
                     android:layout_weight="1">
 
@@ -251,14 +253,16 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/icons8_shopping_cart_bar_item" />
+                        app:srcCompat="@drawable/shopping_cart" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/clOrderAppBar"
                     android:layout_width="0dp"
+                    android:background="@drawable/green_background"
                     android:layout_height="match_parent"
                     android:layout_weight="1">
+
 
                     <ImageView
                         android:id="@+id/imageView11"
@@ -268,12 +272,14 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/icons_purchased_bar_item" />
+                        app:srcCompat="@drawable/shopping_bag" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/clProfileAppBar"
                     android:layout_width="0dp"
+                    android:background="@drawable/green_background"
+
                     android:layout_height="match_parent"
                     android:layout_weight="1">
 
@@ -285,7 +291,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/icons8_user_bar_item" />
+                        app:srcCompat="@drawable/user" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </LinearLayout>

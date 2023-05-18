@@ -67,7 +67,7 @@ public class ShowProductActivity extends AppCompatActivity implements CategoryRe
         UserModel user = SharedPrefManager.getInstance(this).getUser();
         if (SharedPrefManager.getInstance(this).isLoggedIn()) {
             if (!(user.getAvatar() == null)) {
-                Glide.with(getApplicationContext()).load(user.getAvatar()).into(userAvatar);
+                //Glide.with(getApplicationContext()).load(user.getAvatar()).into(userAvatar);
             }
         }
         loadCategory();
@@ -133,7 +133,7 @@ public class ShowProductActivity extends AppCompatActivity implements CategoryRe
                     productList = response.body();
                     productAdapter = new ProductAdapter(productList, ShowProductActivity.this);
                     rvShowProduct.setAdapter(productAdapter);
-                    tvUserAction.setText("All products - " + productList.size() + " results");
+                    tvUserAction.setText("" + productList.size() + " sản phẩm");
 
                     ivNoProduct.setVisibility(View.GONE);
 //                            rvShowProduct.setBac
@@ -184,7 +184,7 @@ public class ShowProductActivity extends AppCompatActivity implements CategoryRe
 //                if (response.isSuccessful()) {
                 productList = response.body();
                 productAdapter = new ProductAdapter(productList, ShowProductActivity.this);
-                tvUserAction.setText(tvUserAction.getText().toString() + " - " + (productList != null ? productList.size() : 0) + " results");
+                tvUserAction.setText(tvUserAction.getText().toString() + " - " + (productList != null ? productList.size() : 0) + " sản phẩm");
                 rvShowProduct.setAdapter(productAdapter);
 //                    ivNoProduct.setBackground(null);
                 ivNoProduct.setVisibility(View.GONE);
@@ -205,7 +205,7 @@ public class ShowProductActivity extends AppCompatActivity implements CategoryRe
     @SuppressLint("SetTextI18n")
     @Override
     public void onCategoryItemClick(int position) {
-        tvUserAction.setText("Category - " + categoryList.get(position).getName());
+        tvUserAction.setText("Danh mục - " + categoryList.get(position).getName());
         loadCategoryProduct(categoryList.get(position).getId());
     }
 
@@ -218,7 +218,7 @@ public class ShowProductActivity extends AppCompatActivity implements CategoryRe
                 // Perform action on key press
                 if (!TextUtils.isEmpty(String.valueOf(searchProductEdit.getText()))) {
                     String name = String.valueOf(searchProductEdit.getText());
-                    tvUserAction.setText("Search for \"" + name + "\"");
+                    tvUserAction.setText("Từ khóa \"" + name + "\"");
                     searchProductByName(name);
                     closeKeyboard();
                 }
@@ -236,7 +236,7 @@ public class ShowProductActivity extends AppCompatActivity implements CategoryRe
 //                if(response.isSuccessful()){
                 productList = response.body();
                 productAdapter = new ProductAdapter(productList, ShowProductActivity.this);
-                tvUserAction.setText(tvUserAction.getText() + " - " + (productList != null ? productList.size() : 0) + " results");
+                tvUserAction.setText(tvUserAction.getText() + " - " + (productList != null ? productList.size() : 0) + "sản phẩm");
                 rvShowProduct.setAdapter(productAdapter);
 
 //                    ivNoProduct.setBackground(null);
