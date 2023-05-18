@@ -23,6 +23,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -56,6 +57,7 @@ public class ProfileActivity extends AppCompatActivity {
     ProgressDialog mProgressDialog;
     TabLayout tlMyProfileItem;
     ViewPager2 vp2MyProfileItem;
+    AppCompatButton appCompatEditProfileBtn, appCompatLogoutBtn;
 
     MyProfileViewPagerAdapter profileViewPagerAdapter;
 
@@ -77,6 +79,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         toHome();
         toCart();
+        logout();
         toOrder();
         loadAdapter();
         changeAvatar();
@@ -95,6 +98,8 @@ public class ProfileActivity extends AppCompatActivity {
 
         tlMyProfileItem = findViewById(R.id.tlMyProfileItem);
         vp2MyProfileItem = findViewById(R.id.vp2MyProfileItem);
+        appCompatLogoutBtn = findViewById(R.id.appCompatLogoutBtn);
+
 
         mProgressDialog = new ProgressDialog(ProfileActivity.this);
         mProgressDialog.setMessage("Please wait upload ...");
@@ -280,6 +285,24 @@ public class ProfileActivity extends AppCompatActivity {
                 Toast.makeText(ProfileActivity.this, "Update Avatar Fail", Toast.LENGTH_LONG).show();
                 mProgressDialog.dismiss();
             }
+        });
+    }
+    void logout() {
+        appCompatLogoutBtn.setOnClickListener(v -> {
+            AlertDialog.Builder alert = new AlertDialog.Builder(this);
+            alert.setTitle("Thông báo!");
+            alert.setIcon(R.drawable.icons8_warning_96);
+            alert.setMessage("Bạn muốn đăng xuất?");
+            alert.setPositiveButton("Có", (dialog, which) -> {
+                SharedPrefManager.getInstance(this).deleteDeliveryList();
+                SharedPrefManager.getInstance(this).userLogout();
+                startActivity(new Intent(this, IntroActivity.class));
+            });
+            alert.setNegativeButton("Không", (dialog, which) -> {
+
+            });
+
+            alert.show();
         });
     }
 

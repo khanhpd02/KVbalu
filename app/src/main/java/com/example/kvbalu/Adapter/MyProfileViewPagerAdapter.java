@@ -8,8 +8,6 @@ import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.example.kvbalu.Fragment.MyProfileDetailFragment;
-import com.example.kvbalu.Fragment.MyProfileOtherFragment;
-import com.example.kvbalu.Fragment.MyProfileWalletFragment;
 
 public class MyProfileViewPagerAdapter extends FragmentStateAdapter {
 

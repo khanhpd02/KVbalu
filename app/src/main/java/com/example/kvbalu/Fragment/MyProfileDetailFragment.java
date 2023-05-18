@@ -77,7 +77,7 @@ public class MyProfileDetailFragment extends Fragment implements DeliveryAddress
         loadDetail();
 
         editProfile();
-        logout();
+//        logout();
 
         tvViewAllAddress.setOnClickListener(v -> openAddressList());
         tvChangePassword.setOnClickListener(v -> openChangePassword());
@@ -92,7 +92,7 @@ public class MyProfileDetailFragment extends Fragment implements DeliveryAddress
         tvChangePassword = getView().findViewById(R.id.tvChangePassword);
 
         appCompatEditProfileBtn = getView().findViewById(R.id.appCompatEditProfileBtn);
-        appCompatLogoutBtn = getView().findViewById(R.id.appCompatLogoutBtn);
+//        appCompatLogoutBtn = getView().findViewById(R.id.appCompatLogoutBtn);
     }
 
     void loadDetail() {
