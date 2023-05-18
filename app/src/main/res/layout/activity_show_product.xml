@@ -28,7 +28,7 @@
             android:drawableStart="@drawable/icons8_search"
             android:elevation="3dp"
             android:ems="10"
-            android:hint=""
+            android:hint="Nhập từ khóa.."
             android:inputType="textPersonName"
             android:paddingStart="8sp"
             android:paddingEnd="16sp"

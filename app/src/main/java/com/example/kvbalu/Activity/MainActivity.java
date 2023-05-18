@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements CategoryRecycleIn
 //        Log.e("User Avatar", user.getAvatar());
         if (SharedPrefManager.getInstance(this).isLoggedIn()) {
             if (!(user.getAvatar() == null)) {
-                Glide.with(getApplicationContext()).load(user.getAvatar()).into(userAvatar);
+                //Glide.with(getApplicationContext()).load(user.getAvatar()).into(userAvatar);
             }
         }
 
