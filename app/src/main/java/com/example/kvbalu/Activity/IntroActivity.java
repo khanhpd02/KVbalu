@@ -7,10 +7,8 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.kvbalu.R;
-import com.example.kvbalu.SharedPrefManager;
 
 public class IntroActivity extends AppCompatActivity {
 
@@ -33,7 +31,7 @@ public class IntroActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        }, 2000); // 2000 milliseconds = 2 giây
+        }, 1000); // 2000 milliseconds = 2 giây
 
 //        if (SharedPrefManager.getInstance(this).isLoggedIn()) {
 //            finish();

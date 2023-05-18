@@ -186,13 +186,12 @@ public class MainActivity extends AppCompatActivity implements CategoryRecycleIn
         Toast.makeText(MainActivity.this, "Category - " + categoryList.get(position).getName(), Toast.LENGTH_LONG).show();
     }
 
-    public void searchProduct(){
+    public void searchProduct() {
         searchProductEdit.setOnKeyListener((v, keyCode, event) -> {
             // If the event is a key-down event on the "enter" button
-            if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
-                    (keyCode == KeyEvent.KEYCODE_ENTER)) {
+            if ((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
                 // Perform action on key press
-                if(!TextUtils.isEmpty(String.valueOf(searchProductEdit.getText()))){
+                if (!TextUtils.isEmpty(String.valueOf(searchProductEdit.getText()))) {
                     Intent intent = new Intent(MainActivity.this, ShowProductActivity.class);
                     intent.putExtra("searchProduct", String.valueOf(searchProductEdit.getText()));
                     startActivity(intent);
@@ -204,7 +203,7 @@ public class MainActivity extends AppCompatActivity implements CategoryRecycleIn
         });
     }
 
-    public void goToCart(){
+    public void goToCart() {
         clCart.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, CartActivity.class)));
     }
 }
