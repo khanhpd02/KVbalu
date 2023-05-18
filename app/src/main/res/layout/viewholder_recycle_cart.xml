@@ -14,6 +14,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/green_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,12 +26,11 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
             android:text="10000"
-            android:textColor="#336a6c"
+            android:textColor="#000000"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/textView34"
-            app:layout_constraintStart_toEndOf="@+id/textView34"
-            app:layout_constraintTop_toTopOf="@+id/textView34" />
+            app:layout_constraintStart_toStartOf="@+id/textView33"
+            app:layout_constraintTop_toBottomOf="@+id/textView33" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout11"
@@ -62,7 +62,7 @@
             android:layout_height="60dp"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:text="Product ABCDXYZ Bla Bla ABCDXYZ Bla Bla ABCDXYZ Bla Bla ABCDXYZ Bla Bla"
+            android:text="ten sp"
             android:textColor="#333"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -76,7 +76,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:fontFamily="sans-serif-black"
-            android:text="Total"
+            android:text="Tổng"
             android:textColor="#564C68"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/textView33"
@@ -90,7 +90,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="48dp"
             android:fontFamily="sans-serif-black"
-            android:text="Quantity"
+            android:text="Số lượng"
             android:textColor="#564C68"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/textView13"
@@ -102,13 +102,13 @@
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:fontFamily="sans-serif-black"
-            android:text="$"
-            android:textColor="#eea07b"
+            android:text="đ"
+            android:textColor="#029808"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@+id/textView8"
-            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+            app:layout_constraintBottom_toBottomOf="@+id/tvCartPrice"
+            app:layout_constraintStart_toEndOf="@+id/tvCartPrice"
+            app:layout_constraintTop_toTopOf="@+id/tvCartPrice" />
 
         <TextView
             android:id="@+id/tvCartProductPrice"
@@ -116,11 +116,11 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
             android:text="10000"
-            android:textColor="#336a6c"
+            android:textColor="#000000"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/textView14"
-            app:layout_constraintStart_toEndOf="@+id/textView14" />
+            app:layout_constraintStart_toStartOf="@+id/textView13"
+            app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
         <TextView
             android:id="@+id/tvCartPrice"
@@ -128,11 +128,11 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
             android:text="10000"
-            android:textColor="#336a6c"
+            android:textColor="#000000"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/textView11"
-            app:layout_constraintStart_toEndOf="@+id/textView11" />
+            app:layout_constraintStart_toStartOf="@+id/textView8"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
         <TextView
             android:id="@+id/textView13"
@@ -140,7 +140,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:fontFamily="sans-serif-black"
-            android:text="Price"
+            android:text="Giá"
             android:textColor="#564C68"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="@+id/tvProductNameCart"
@@ -150,25 +150,13 @@
             android:id="@+id/textView14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:fontFamily="sans-serif-black"
-            android:text="$"
-            android:textColor="#eea07b"
+            android:text="đ"
+            android:textColor="#009385"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@+id/textView13"
-            app:layout_constraintTop_toBottomOf="@+id/textView13" />
-
-        <TextView
-            android:id="@+id/textView34"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="x"
-            android:textColor="#ED9F7B"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/textView33"
-            app:layout_constraintTop_toBottomOf="@+id/textView33" />
+            app:layout_constraintBottom_toBottomOf="@+id/tvCartProductPrice"
+            app:layout_constraintStart_toEndOf="@+id/tvCartProductPrice"
+            app:layout_constraintTop_toTopOf="@+id/tvCartProductPrice" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

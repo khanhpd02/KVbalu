@@ -56,7 +56,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="12dp"
-        android:background="#f7f6f0"
+        android:background="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/clProceedToPayment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -84,7 +84,7 @@
                 android:id="@+id/ivCartEmpty"
                 android:layout_width="match_parent"
                 android:layout_height="330dp"
-                android:background="@drawable/empty_cart"
+                android:background="@drawable/no_item_cart"
                 android:visibility="gone" />
 
         </LinearLayout>

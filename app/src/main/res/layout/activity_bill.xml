@@ -23,7 +23,7 @@
             android:layout_marginBottom="8dp"
             android:fontFamily="sans-serif"
             android:gravity="center_horizontal"
-            android:text="Checkout (3/3)"
+            android:text="Bước (3/3)"
             android:textColor="#000000"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"

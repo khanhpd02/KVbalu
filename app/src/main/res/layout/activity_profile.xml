@@ -164,7 +164,11 @@
                 app:tabIndicatorHeight="0dp"
                 app:tabSelectedTextColor="#fff"
                 app:tabTextAppearance="@style/tab_text"
-                app:tabTextColor="#FFFFFF" />
+                app:tabTextColor="#FFFFFF"
+
+
+
+                />
 
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/vp2MyProfileItem"

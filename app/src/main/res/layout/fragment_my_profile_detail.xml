@@ -244,45 +244,6 @@
                 android:layout_height="1dp"
                 android:background="?android:attr/listDivider" />
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingStart="8dp"
-                android:paddingTop="12dp"
-                android:paddingEnd="8dp"
-                android:paddingBottom="12dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:weightSum="3">
-
-                    <TextView
-                        android:id="@+id/textView41421"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Mật khẩu"
-                        android:textColor="#333333"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/tvChangePassword"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="end"
-                        android:layout_weight="2"
-                        android:gravity="end"
-                        android:text="Change"
-                        android:textColor="#BA2323"
-                        android:textSize="18sp"
-                        android:textStyle="bold|italic" />
-                </LinearLayout>
-            </TableRow>
-
             <View
                 android:id="@+id/divider81"
                 android:layout_width="match_parent"
@@ -301,34 +262,37 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/appCompatEditProfileBtn"
-                android:layout_width="119dp"
-                android:layout_height="44dp"
-                android:layout_marginStart="40dp"
+                android:layout_width="153dp"
+                android:layout_height="41dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="12dp"
-                android:background="@drawable/count_cart_item"
+                android:background="@drawable/bg_circle"
                 android:text="Sửa"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.015"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintVertical_bias="0.0" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/tvChangePassword2"
-                android:layout_width="149dp"
-                android:layout_height="46dp"
-                android:layout_marginBottom="12dp"
-                android:background="@drawable/count_cart_item"
+                android:layout_width="154dp"
+                android:layout_height="48dp"
+                android:background="@drawable/addproduct"
                 android:text="Đổi mật khẩu"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/appCompatEditProfileBtn" />
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/appCompatEditProfileBtn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.666" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 

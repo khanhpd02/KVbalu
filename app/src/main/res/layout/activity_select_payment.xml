@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f7f6f0"
+    android:background="#FFFFFF"
     tools:context=".Activity.SelectPaymentActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -265,7 +265,7 @@
         android:id="@+id/constraintLayout15"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/round_top_corner_edece3"
+        android:background="#ffffff"
         android:elevation="3dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -277,7 +277,7 @@
             android:layout_height="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
-            android:text="Tổng đơn hàng: 200.000đ"
+            android:text="Tổng: 200.000đ"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -320,12 +320,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <RadioButton
-                android:id="@+id/rdOnlinePayment"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:enabled="false"
-                android:text="Chuyển khoản" />
+<!--            <RadioButton-->
+<!--                android:id="@+id/rdOnlinePayment"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:enabled="false"-->
+<!--                android:text="Chuyển khoản" />-->
 
             <RadioButton
                 android:id="@+id/rdCashOnDelivery"

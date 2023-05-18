@@ -49,7 +49,7 @@ import retrofit2.Response;
 
 public class MyProfileDetailFragment extends Fragment implements DeliveryAddressSelectInterface {
 
-    TextView tvName, tvUsername, tvPhone, tvEmail, tvViewAllAddress, tvChangePassword;
+    TextView tvName, tvUsername, tvPhone, tvEmail, tvViewAllAddress, tvChangePassword2;
     ConstraintLayout clAddNewDeliveryAddress;
     ImageView ivNoAddressFound;
     RecyclerView rvDeliveryAddress;
@@ -80,7 +80,7 @@ public class MyProfileDetailFragment extends Fragment implements DeliveryAddress
 //        logout();
 
         tvViewAllAddress.setOnClickListener(v -> openAddressList());
-        tvChangePassword.setOnClickListener(v -> openChangePassword());
+        tvChangePassword2.setOnClickListener(v -> openChangePassword());
     }
 
     void anhXa() {
@@ -89,7 +89,7 @@ public class MyProfileDetailFragment extends Fragment implements DeliveryAddress
         tvEmail = getView().findViewById(R.id.tvEmail);
         tvPhone = getView().findViewById(R.id.tvPhoneNumber);
         tvViewAllAddress = getView().findViewById(R.id.tvViewAllAddress);
-        tvChangePassword = getView().findViewById(R.id.tvChangePassword);
+        tvChangePassword2 = getView().findViewById(R.id.tvChangePassword2);
 
         appCompatEditProfileBtn = getView().findViewById(R.id.appCompatEditProfileBtn);
 //        appCompatLogoutBtn = getView().findViewById(R.id.appCompatLogoutBtn);

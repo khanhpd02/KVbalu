@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f7f6f0"
+    android:background="#ffffff"
     tools:context=".Activity.SelectAddressActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -143,7 +143,7 @@
                 android:id="@+id/ivNoAddressFound"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/no_address_found" />
+                app:srcCompat="@drawable/no_address_background" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvDeliveryAddress"

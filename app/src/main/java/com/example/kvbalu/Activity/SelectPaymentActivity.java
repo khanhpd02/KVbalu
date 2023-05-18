@@ -113,7 +113,7 @@ public class SelectPaymentActivity extends AppCompatActivity {
                         for (CartModel c : cartList) {
                             totalCartPrice += c.getQuantity() * c.getProduct().getPrice();
                         }
-                        tv_totalPrice.setText("Tổng đơn hàng: " + totalCartPrice + "đ");
+                        tv_totalPrice.setText("Tổng: " + totalCartPrice + "đ");
                         tvTotalCartItem.setText(String.valueOf(cartList.size()));
 //                        tvTotalCartPrice.setText(String.valueOf(totalCartPrice));
                     }
