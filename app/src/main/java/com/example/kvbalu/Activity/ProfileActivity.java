@@ -125,9 +125,9 @@ public class ProfileActivity extends AppCompatActivity {
     void loadAdapter() {
         tvName.setText(SharedPrefManager.getInstance(getApplicationContext()).getUser().getName());
 
-        tlMyProfileItem.addTab(tlMyProfileItem.newTab().setText("My Information"));
-        tlMyProfileItem.addTab(tlMyProfileItem.newTab().setText("My Wallet"));
-        tlMyProfileItem.addTab(tlMyProfileItem.newTab().setText("Other..."));
+        //tlMyProfileItem.addTab(tlMyProfileItem.newTab().setText("Thông tin cá nhân"));
+      /*  tlMyProfileItem.addTab(tlMyProfileItem.newTab().setText("My Wallet"));
+        tlMyProfileItem.addTab(tlMyProfileItem.newTab().setText("Other..."));*/
 
         profileViewPagerAdapter = new MyProfileViewPagerAdapter(getSupportFragmentManager(), getLifecycle());
         vp2MyProfileItem.setAdapter(profileViewPagerAdapter);
