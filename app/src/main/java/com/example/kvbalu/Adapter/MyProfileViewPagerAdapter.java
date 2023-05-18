@@ -24,19 +24,19 @@ public class MyProfileViewPagerAdapter extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        if(position == 0){
+        /*if(position == 0){*/
             return new MyProfileDetailFragment();
-        }else if(position == 1){
+        /*}else if(position == 1){
             return new MyProfileWalletFragment();
         }
         else{
             return new MyProfileOtherFragment();
-        }
+        }*/
     }
 
     @Override
     public int getItemCount() {
-        return 3;
+        return 1;
     }
 
 }

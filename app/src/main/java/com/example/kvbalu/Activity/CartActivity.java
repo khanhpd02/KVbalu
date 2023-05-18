@@ -53,7 +53,7 @@ public class CartActivity extends AppCompatActivity implements CartRecycleInterf
         UserModel user = SharedPrefManager.getInstance(this).getUser();
         if (SharedPrefManager.getInstance(this).isLoggedIn()) {
             if (!(user.getAvatar() == null)) {
-                Glide.with(getApplicationContext()).load(user.getAvatar()).into(userAvatar);
+                //Glide.with(getApplicationContext()).load(user.getAvatar()).into(userAvatar);
             }
         }
         loadCart();
@@ -103,7 +103,7 @@ public class CartActivity extends AppCompatActivity implements CartRecycleInterf
                         for (CartModel c : cartList) {
                             totalCartPrice += c.getQuantity() * c.getProduct().getPrice();
                         }
-                        tvTotalCartItem.setText(String.valueOf(cartList.size()));
+                        //tvTotalCartItem.setText(String.valueOf(cartList.size()));
                         tvTotalCartPrice.setText(String.valueOf(totalCartPrice));
                         clCartPriceCheckout.setVisibility(View.VISIBLE);
 //                        ivCartEmpty.setBackground(null);
