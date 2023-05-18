@@ -1,9 +1,10 @@
 package com.example.kvbalu.Model;
 
 
+import java.io.Serializable;
 import java.util.List;
 
-public class ProductModel {
+public class ProductModel implements Serializable {
     private long id;
     private String productName;
     private int quantity;

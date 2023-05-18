@@ -1,9 +1,10 @@
 package com.example.kvbalu.Model;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-public class OrderModel {
+public class OrderModel implements Serializable {
     private long id;
 
     private String address;
@@ -17,7 +18,6 @@ public class OrderModel {
     private UserModel user;
 
     private Date createAt;
-
 
     private List<OrderItemModel> orderItems;
 

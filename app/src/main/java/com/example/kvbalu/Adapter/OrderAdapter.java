@@ -1,6 +1,7 @@
 package com.example.kvbalu.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,9 +12,11 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.kvbalu.Activity.OrderDetailActivity;
 import com.example.kvbalu.Model.OrderModel;
 import com.example.kvbalu.R;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
@@ -52,17 +55,26 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
         holder.rvOrderItemList.setNestedScrollingEnabled(false);
         holder.rvOrderItemList.setAdapter(holder.orderItemAdapter);
 
+//        holder.itemView.setOnClickListener(v -> {
+//            if (holder.clDeliveryInfo.getVisibility() == View.VISIBLE) {
+//                holder.clDeliveryInfo.setVisibility(View.GONE);
+//                holder.clOrderItemList.setVisibility(View.GONE);
+//                holder.clDeliveryDetail.setBackground(context.getDrawable(R.drawable.product_background_white));
+//            } else {
+//                holder.clDeliveryInfo.setVisibility(View.VISIBLE);
+//                holder.clOrderItemList.setVisibility(View.VISIBLE);
+//                holder.clDeliveryDetail.setBackground(context.getDrawable(R.drawable.selected_delivery_bg));
+//                holder.clOrderItemList.requestFocus();
+//            }
+//        });
+
         holder.itemView.setOnClickListener(v -> {
-            if (holder.clDeliveryInfo.getVisibility() == View.VISIBLE) {
-                holder.clDeliveryInfo.setVisibility(View.GONE);
-                holder.clOrderItemList.setVisibility(View.GONE);
-                holder.clDeliveryDetail.setBackground(context.getDrawable(R.drawable.product_background_white));
-            } else {
-                holder.clDeliveryInfo.setVisibility(View.VISIBLE);
-                holder.clOrderItemList.setVisibility(View.VISIBLE);
-                holder.clDeliveryDetail.setBackground(context.getDrawable(R.drawable.selected_delivery_bg));
-                holder.clOrderItemList.requestFocus();
-            }
+            // Get the OrderModel object corresponding to the clicked item
+            OrderModel clickedOrder = orderList.get(holder.getAdapterPosition());
+            // Create an Intent for the OrderDetailActivity and pass the clicked OrderModel object as an extra
+            Intent intent = new Intent(context, OrderDetailActivity.class);
+            intent.putExtra("order", (Serializable) clickedOrder);
+            context.startActivity(intent);
         });
     }
 
@@ -95,4 +107,5 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
             rvOrderItemList = itemView.findViewById(R.id.rvOrderItemList);
         }
     }
+
 }
