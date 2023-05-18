@@ -56,7 +56,7 @@ public class OrderItemAdapter extends RecyclerView.Adapter<OrderItemAdapter.View
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            ivProductImg = itemView.findViewById(R.id.ivProductImgOrderItem);
+            ivProductImg = itemView.findViewById(R.id.iv_productImage_orderDetail);
 
             tvProductName = itemView.findViewById(R.id.tvProductNameOrderItem);
             tvOrderItemPrice = itemView.findViewById(R.id.tvOrderItemPrice);

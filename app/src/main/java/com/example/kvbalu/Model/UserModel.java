@@ -1,8 +1,9 @@
 package com.example.kvbalu.Model;
 
+import java.io.Serializable;
 import java.util.Collection;
 
-public class UserModel {
+public class UserModel implements Serializable {
     private long id;
 
     private String name;

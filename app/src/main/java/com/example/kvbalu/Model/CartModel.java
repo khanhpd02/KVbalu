@@ -1,6 +1,8 @@
 package com.example.kvbalu.Model;
 
-public class CartModel {
+import java.io.Serializable;
+
+public class CartModel implements Serializable {
     private long id;
 
     private int quantity;

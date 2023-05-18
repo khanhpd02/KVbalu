@@ -1,6 +1,8 @@
 package com.example.kvbalu.Model;
 
-public class CategoryModel {
+import java.io.Serializable;
+
+public class CategoryModel implements Serializable {
     private long id ;
     private String name;
     private String image;
