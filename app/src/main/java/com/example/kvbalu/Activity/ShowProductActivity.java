@@ -22,7 +22,6 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.example.kvbalu.API.CategoryAPI;
 import com.example.kvbalu.API.ProductAPI;
 import com.example.kvbalu.Adapter.CategoryAdapter;
@@ -32,7 +31,7 @@ import com.example.kvbalu.Model.CategoryModel;
 import com.example.kvbalu.Model.ProductModel;
 import com.example.kvbalu.Model.UserModel;
 import com.example.kvbalu.R;
-import com.example.kvbalu.SharedPrefManager;
+import com.example.kvbalu.common.SharedPrefManager;
 
 import java.util.List;
 

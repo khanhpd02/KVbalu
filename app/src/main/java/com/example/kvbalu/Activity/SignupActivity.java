@@ -18,7 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.kvbalu.API.UserAPI;
 import com.example.kvbalu.Model.UserModel;
 import com.example.kvbalu.R;
-import com.example.kvbalu.SharedPrefManager;
+import com.example.kvbalu.common.SharedPrefManager;
 
 import retrofit2.Call;
 import retrofit2.Callback;

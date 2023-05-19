@@ -23,7 +23,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.kvbalu.Interface.DeliveryAddressSelectInterface;
 import com.example.kvbalu.Object.DeliveryDetail;
 import com.example.kvbalu.R;
-import com.example.kvbalu.SharedPrefManager;
+import com.example.kvbalu.common.SharedPrefManager;
 
 import java.util.List;
 

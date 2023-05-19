@@ -21,7 +21,7 @@ import com.example.kvbalu.Adapter.OrderAdapter;
 import com.example.kvbalu.Model.OrderModel;
 import com.example.kvbalu.Model.UserModel;
 import com.example.kvbalu.R;
-import com.example.kvbalu.SharedPrefManager;
+import com.example.kvbalu.common.SharedPrefManager;
 
 import java.util.ArrayList;
 import java.util.List;

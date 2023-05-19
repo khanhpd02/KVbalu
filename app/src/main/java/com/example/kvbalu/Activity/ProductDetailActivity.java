@@ -23,7 +23,7 @@ import com.example.kvbalu.Model.CartModel;
 import com.example.kvbalu.Model.ProductImageModel;
 import com.example.kvbalu.Model.ProductModel;
 import com.example.kvbalu.R;
-import com.example.kvbalu.SharedPrefManager;
+import com.example.kvbalu.common.SharedPrefManager;
 
 import java.util.ArrayList;
 import java.util.List;

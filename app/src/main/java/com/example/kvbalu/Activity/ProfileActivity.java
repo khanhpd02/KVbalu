@@ -35,8 +35,8 @@ import com.example.kvbalu.API.UserAPI;
 import com.example.kvbalu.Adapter.MyProfileViewPagerAdapter;
 import com.example.kvbalu.Model.UserModel;
 import com.example.kvbalu.R;
-import com.example.kvbalu.RealPathUtil;
-import com.example.kvbalu.SharedPrefManager;
+import com.example.kvbalu.common.RealPathUtil;
+import com.example.kvbalu.common.SharedPrefManager;
 import com.google.android.material.tabs.TabLayout;
 
 import java.io.File;

@@ -21,7 +21,7 @@ import com.example.kvbalu.Interface.CartRecycleInterface;
 import com.example.kvbalu.Model.CartModel;
 import com.example.kvbalu.Model.UserModel;
 import com.example.kvbalu.R;
-import com.example.kvbalu.SharedPrefManager;
+import com.example.kvbalu.common.SharedPrefManager;
 
 import java.util.List;
 

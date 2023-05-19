@@ -1,4 +1,4 @@
-package com.example.kvbalu;
+package com.example.kvbalu.common;
 
 import android.annotation.SuppressLint;
 import android.content.ContentUris;
