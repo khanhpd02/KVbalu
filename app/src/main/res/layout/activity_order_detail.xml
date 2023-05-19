@@ -4,13 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.OrdersActivity">
+    tools:context=".activity.OrdersActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/clOrderInfo"
         android:background="@drawable/green_background"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_width="416dp"
+        android:layout_height="274dp"
+        android:background="@drawable/green_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,6 +23,7 @@
             android:id="@+id/textView43"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             android:text="THÔNG TIN ĐƠN HÀNG"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -32,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="OrderID: #000"
+            android:text="Mã Đơn hàng: #000"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/textView43"
@@ -46,7 +50,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="10dp"
             android:text="Số lượng sản phẩm:"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_oderID_orderDetail" />
@@ -56,7 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tổng đơn hàng:"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/textView47"
             app:layout_constraintTop_toBottomOf="@+id/textView47" />
@@ -66,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Địa chỉ giao hàng:"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/textView5a"
             app:layout_constraintTop_toBottomOf="@+id/textView5a" />
@@ -76,7 +80,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Số điện thoại:"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/textView50"
             app:layout_constraintTop_toBottomOf="@+id/textView50" />
@@ -86,7 +90,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Ngày tạo:"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/textView53"
             app:layout_constraintTop_toBottomOf="@+id/textView53" />
@@ -97,7 +101,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="48dp"
             android:text="2"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="@+id/textView47"
             app:layout_constraintEnd_toEndOf="parent"
@@ -109,7 +113,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="48dp"
             android:text="2"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textView50" />
@@ -120,7 +124,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="48dp"
             android:text="2"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textView5a" />
@@ -131,7 +135,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="48dp"
             android:text="2"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textView53" />
@@ -142,7 +146,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="48dp"
             android:text="2"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textView57" />
